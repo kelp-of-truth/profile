@@ -1,0 +1,201 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: HiraginoKakuGo;
+    src: url("./ヒラギノ角ゴシック\ W3.ttc");
+}
+
+html,body{
+    font-family: HiraginoKakuGo;
+    padding: 0px;
+    margin: unset;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+#blurBG{
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+}
+html{
+    width: 100vw;
+    height: 100%;
+    background: linear-gradient(#fff,#00ffdd60,#00eeff65);
+    animation: 30s linear changeBG infinite;
+}
+@keyframes changeBG {
+    0%{
+        background-color: rgb(112, 255, 131);
+    }
+    66%{
+        background-color: #6d77ff;
+    }
+    100%{
+        background-color: rgb(112, 255, 131);
+
+    }
+}
+.top-profile{
+    text-align: center;
+    position: relative;
+    top: 10vh;
+    z-index: 0;
+}
+.avatar{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+.text-space{
+    display: inline-block;
+    margin-left: 20px;
+    line-height: 2rem;
+    text-align: left;
+}
+.name{
+    display: inline;
+    color: rgb(73, 73, 73);
+    font-size: 32px;
+}
+.u-name{
+    color: #999999;
+    font-size: 18px;
+
+}
+.description{
+    text-align: center;
+}
+.top-profile button{
+    cursor: pointer;
+    color: inherit;
+    vertical-align: middle;
+    padding: 10px;
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.452);
+    border: 1.5px solid #b1b1b1;
+    border-radius: 0px;
+    transition: 250ms;
+    box-shadow: 0px 0px 5px #777777a9;
+}
+.top-profile button:hover{
+    box-shadow: 0px 0px 10px #777777a9;
+    border-color: rgb(153, 153, 153);
+}
+#content{
+    font-size: 18px;
+}
+#content h1{
+    font-size: 24px;
+    padding-left: 1em;
+}
+#content p{
+    margin-left: 2em;
+    font-size: 18px;
+}
+#content hr{
+    margin-top: 0px;
+    margin-left: 15px;
+    margin-right: 15px;
+    border: unset;
+    border-bottom: 1px solid #00a2ff !important;
+}
+.container::-webkit-scrollbar{
+    display: block;
+    height: 0px;
+    width: 10px;
+    background-color: unset;
+}
+.container::-webkit-scrollbar-corner{
+    display: none;
+    width: 0px;
+    height: 0px;
+}
+.container::-webkit-scrollbar-thumb{
+    background: white;
+    box-sizing: border-box;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+}
+.container::-webkit-scrollbar-thumb:active{
+    border-color: #00a2ff;
+}
+.container{
+    overflow: scroll;
+    height: 400px;
+    transition: 500ms;
+    z-index: 2;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30vw;
+    margin-top: 150px;
+    background-color: #ffffff8f;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 2px 3px 10px rgba(126, 126, 126, 0.644);
+    border-radius: 8px;
+}
+#container-left{
+    left: -20px;right: 30vw;
+}
+#container-right{
+    right: -20px;left: 30vw;
+}
+#content span.point::before{
+    content: "・";
+    font-weight: bold;
+}
+a{
+    color: #2571ff;
+    text-decoration: none;
+    position: relative;
+}
+#content a::after{
+    position: absolute;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #2571ff;
+    bottom: -1px;
+    transform: scale(0, 1);
+    transform-origin: right top;
+    transition: transform 500ms ease-out;
+}
+    
+#content a:hover::after{
+    transform: scale(1, 1);
+    transform-origin: left top;
+}
+.mobile-container{
+    display: none;
+    overflow: scroll;
+    height: 400px;
+    transition: 500ms;
+    z-index: 2;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95vw;
+    left: 2.5vw;
+    margin-top: 150px;
+    background-color: #ffffff8f;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 2px 3px 10px rgba(126, 126, 126, 0.644);
+    border-radius: 8px;
+}
+@media screen and (max-width: 100vh) {
+    .mobile-container{
+        display: block;
+    }
+    .container{
+        display: none;
+    }
+}
